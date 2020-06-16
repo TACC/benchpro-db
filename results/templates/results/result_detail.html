@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Benchmark Result </h1>
+<p>
+User = {{ object.user }} <br>
+System = {{ object.system }} <br>
+Submission time = {{ object.submit_time }} <br>
+Job ID = {{ object.jobid }} <br>
+Nodes = {{ object.nodes }} <br>
+Ranks = {{ object.ranks }} <br>
+Threads = {{ object.threads }} <br>
+Code = {{ object.code }} - {{ object.version }} <br>
+Compiler  = {{ object.compiler }} - {{ object.mpi }} <br>
+Modules = {{ object.modules }} <br>
+Dataset = {{ object.dataset }} <br>
+Result = {{ object.result }} {{ object.result_unit }}
+</p>
+{% endblock %}
