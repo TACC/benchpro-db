@@ -25,7 +25,7 @@ def show():
 
 
 def add():
-	keys = ["user", "system", "submit_time", "jobid", "nodes", "ranks", "threads", "code", "version", "compiler", "mpi", "modules", "dataset", "result", "result_unit"]
+	keys = ["username", "system", "submit_time", "jobid", "nodes", "ranks", "threads", "code", "version", "compiler", "mpi", "modules", "dataset", "result", "result_unit"]
 	vals = ["mcawood", "Stampede2", "2020-06-16 14:35:18-05:00", 51232, 6, 48, 4,  "wrf", 4.5, "mpi", "impi", "", "conus2km", 53.2, "seconds"]
 
 	key_str = ", ".join(keys)
@@ -42,8 +42,9 @@ def add():
 		print(e)
 
 
-#show()
+show()
 add()
+show()
 
 cur.close()
 conn.close()

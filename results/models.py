@@ -5,7 +5,7 @@ from django.utils.timezone import now
 
 
 class Result(models.Model):
-    user = models.CharField(max_length=50, blank=False)
+    username = models.CharField(max_length=50, blank=False)
     system = models.CharField(max_length=50, blank=False)
     submit_time = models.DateTimeField(default=now, blank=False)
     jobid = models.IntegerField(blank=False)

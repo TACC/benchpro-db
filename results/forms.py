@@ -6,7 +6,7 @@ class ResultForm(forms.ModelForm):
     class Meta:
         model = Result
         fields = [
-            'user',
+            'username',
             'system',
             'submit_time',
             'jobid',

@@ -6,15 +6,6 @@ from .models import Result
 
 # Create your views here.
 
-
-def home_view(request, *args, **kwargs):
-    my_context = {
-        "page_title": "Home Page",
-        "my_list": [123, 456, 789]
-    }
-
-    return render(request, "home.html", my_context)
-
 def result_create_view(request):
     form = ResultForm(request.POST or None)
     if form.is_valid():
