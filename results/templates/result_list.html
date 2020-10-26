@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+  <a class="btn btn-primary" href="/create">Add new</a>
+  <hr/>
+
+  <form method="GET">
+	{{ filter.form }}
+	<button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <table class="table table-striped table-dark">
+	<thead>
+	  <tr>
+		<th style="width: 5%">User</th>
+		<th style="width: 5%">System</th>
+		<th style="width: 3%">Job ID</th>
+		<th style="width: 8%">Submit time</th>
+		<th style="width: 10%">Application</th>
+		<th style="width: 10%">Dataset</th>
+		<th style="width: 10%">Result</th>
+	  </tr>
+	</thead>
+
+	<tbody>
+
+	  {% for result in filter.qs %}
+		<tr>
+		  <td>{{result.username}}</td>
+		  <td>{{result.system}}</td>
+		  <td><a href="http://stats.{{result.system}}.tacc.utexas.edu/machine/job/{{result.jobid}}/">{{result.jobid}}</a></td>
+		  <td> {{result.submit_time}} </td>
+		  <td>{{result.code}} {{result.version}}</td>
+		  <td>{{result.dataset}}</td>
+		  <td><a href='{{result.get_absolute_url}}'>{{result.result}} {{result.result_unit}}</td>
+		</tr>
+	  {% endfor %}
+
+	</tbody>
+  </table>
+
+  <p>Found {{filter.qs|length}} results </p>
+
+</div>
+
+{% endblock %}

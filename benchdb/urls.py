@@ -14,13 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from results.views import result_detail_view, result_create_view, result_delete_view, result_list_view
+from django.urls import path, include
+from django.views.static import serve
+import benchdb.settings as settings
 
 urlpatterns = [
-    path('', result_list_view, name='home'),
-    path('result/<int:id>/', result_detail_view),
-    path('result/<int:id>/delete', result_delete_view),
-    path('create/', result_create_view),
     path('admin/', admin.site.urls),
+	path('', include('results.urls')),
+	path(r'media/<path>', serve, {'document_root': settings.MEDIA_ROOT}, name = "media")
 ]

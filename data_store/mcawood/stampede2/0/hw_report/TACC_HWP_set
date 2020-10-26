@@ -1,0 +1,11 @@
+TACC_HWP_set VERBOSE option --show (or -s)
+TACC_HWP_set VERBOSE $Id: TACC_HWP_set.c,v 1.6 2018/02/05 19:00:52 mccalpin Exp mccalpin $
+TACC_HWP_set IA32_HWP_CAPABILITIES on core 0 is 0x070A1525
+TACC_HWP_set VERBOSE core 0 hwp_lowest 0x07 (7 decimal)
+TACC_HWP_set VERBOSE core 0 hwp_optimum 0x0A (10 decimal)
+TACC_HWP_set VERBOSE core 0 hwp_guaranteed 0x15 (21 decimal)
+TACC_HWP_set VERBOSE core 0 hwp_maximum 0x25 (37 decimal)
+TACC_HWP_set IA32_HWP_REQUEST on core 0 is 0x00002525
+TACC_HWP_set VERBOSE requested minimum ratio 37 (decimal) = 3.70 GHz
+TACC_HWP_set VERBOSE requested maximum ratio 37 (decimal) = 3.70 GHz
+TACC_HWP_set VERBOSE found no inconsistencies or warnings
