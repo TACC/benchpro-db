@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-<form action='./delete' method='POST'>{% csrf_token %}
-    <h1> Delete result for {{ object.code}}-{{ object.version}} ?</h1>
-    <p><input type='submit' value='Yes' />  <a href='/'>Cancel</a></p>
-</form>
-{% endblock %}

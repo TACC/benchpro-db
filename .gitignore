@@ -15,6 +15,7 @@ build/modulefiles/stampede2
 build/modulefiles/frontera
 build/stampede2
 build/frontera
+data_store/*
 develop-eggs/
 dist/
 downloads/

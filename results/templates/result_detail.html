@@ -28,13 +28,17 @@
           <td>End time</td>
           <td>{{ object.end_time }}</td>
         </tr>
+		<tr>
+		  <td>Capture time</td>
+		  <td>{{ object.capture_time }}</td>
+		</tr>
         <tr>
           <td>Description</td>
           <td>{{ object.description }}</td>
         </tr>
         <tr>
           <td>Job ID</td>
-          <td>{{ object.jobid }}</td>
+          <td>{{ object.jobid }} ({{ object.job_status }})</td>
         </tr>
         <tr>
           <td>Nodes</td>
