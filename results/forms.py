@@ -1,5 +1,5 @@
 from django import forms
-from .models import Result
+from .models import Result, Application
 
 class ResultForm(forms.ModelForm):
 	class Meta:
@@ -18,14 +18,32 @@ class ResultForm(forms.ModelForm):
 			'nodes',
 			'ranks',
 			'threads',
-			'code',
-			'version',
-			'compiler',
-			'mpi',
-			'modules',
 			'dataset',
 			'result',
-			'result_unit'
+			'result_unit',
+			'resource_path',
+			'app_id'
+		]
+
+class AppForm(forms.ModelForm):
+	class Meta:
+		model = Application
+		fields = [
+			'username',
+			'system',
+			'code',
+			'version',
+			'build_label',
+			'compiler',
+			'mpi',
+			'module_use',
+			'modules',
+			'opt_flags',
+			'exe_file',
+			'build_prefix',
+			'build_date',
+			'jobid',
+			'app_id'
 		]
 
 

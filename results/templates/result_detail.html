@@ -4,7 +4,7 @@
 {% block content %}
 <h3> Benchmark Result </h3>
 
-<a class="btn btn-danger" href="delete">Delete</a> 
+<a class="btn btn-danger" href="result_delete">Delete</a> 
 <a href="http://stats.{{object.system}}.tacc.utexas.edu/machine/job/{{object.jobid}}/">TaccStats Report</a><br>
   <table class="table table-striped table-dark">
     <tbody>
@@ -84,6 +84,13 @@
           <td>Resource_URL</td>
           <td>{{ object.resource_path }}</td>
         </tr>
+		<tr>
+		  <td>Application info</td>
+		  <td>
+		  {% if object.app_id %}
+		    <a href="/app?code=&version=&system=&jobid={{object.app_id}}">{{object.app_id}}</a>
+		  {% endif %}
+		  </td>
     </tbody>
   </table>
 

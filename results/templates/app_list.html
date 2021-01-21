@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+  <a class="btn btn-primary" href="/app_create">Add new</a>
+  <hr/>
+
+  <form method="GET">
+	{{ filter.form }}
+	<button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <table class="table table-striped table-dark">
+	<thead>
+	  <tr>
+		<th style="width: 15%">Code</th>
+		<th style="width: 15%">Version</th>
+		<th style="width: 15%">System</th>
+		<th style="width: 15%">Job ID</th>
+	  </tr>
+	</thead>
+
+	<tbody>
+
+	  {% for app in filter.qs %}
+		<tr>
+		  <td><a href={{app.get_absolute_url}}>{{app.code}}</a></td>
+		  <td>{{app.version}}</td>
+		  <td>{{app.system}}</td>
+		  <td><a href="http://stats.{{app.system}}.tacc.utexas.edu/machine/job/{{app.jobid}}/">{{app.jobid}}</a></td>
+		</tr>
+	  {% endfor %}
+
+	</tbody>
+  </table>
+
+  <p>Found {{filter.qs|length}} applications </p>
+
+</div>
+
+{% endblock %}

@@ -5,7 +5,8 @@
 
 <div class="container-fluid">
 
-  <a class="btn btn-primary" href="/create">Add new</a>
+  <a class="btn btn-primary" href="/app/create">Add new result</a>
+  <a class="btn btn-primary" href="/app">View Applications</a>
   <hr/>
 
   <form method="GET">
@@ -20,9 +21,9 @@
 		<th style="width: 5%">System</th>
 		<th style="width: 3%">Job ID</th>
 		<th style="width: 8%">Submit time</th>
-		<th style="width: 10%">Application</th>
-		<th style="width: 10%">Dataset</th>
-		<th style="width: 10%">Result</th>
+		<th style="width: 8%">Dataset</th>
+		<th style="width: 14%">Nodes/Ranks/Threads/GPUs</th>
+		<th style="width: 8%">Result</th>
 	  </tr>
 	</thead>
 
@@ -34,8 +35,8 @@
 		  <td>{{result.system}}</td>
 		  <td><a href="http://stats.{{result.system}}.tacc.utexas.edu/machine/job/{{result.jobid}}/">{{result.jobid}}</a></td>
 		  <td> {{result.submit_time}} </td>
-		  <td>{{result.code}} {{result.version}}</td>
 		  <td>{{result.dataset}}</td>
+		  <td>{{result.nodes}}/{{result.ranks_per_node}}/{{result.threads}}</td>
 		  <td><a href='{{result.get_absolute_url}}'>{{result.result}} {{result.result_unit}}</td>
 		</tr>
 	  {% endfor %}
