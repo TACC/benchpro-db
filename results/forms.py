@@ -18,6 +18,7 @@ class ResultForm(forms.ModelForm):
 			'nodes',
 			'ranks',
 			'threads',
+			'gpus',
 			'dataset',
 			'result',
 			'result_unit',

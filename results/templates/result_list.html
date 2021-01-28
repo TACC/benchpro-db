@@ -21,9 +21,9 @@
 		<th style="width: 5%">System</th>
 		<th style="width: 3%">Job ID</th>
 		<th style="width: 8%">Submit time</th>
-		<th style="width: 8%">Dataset</th>
-		<th style="width: 14%">Nodes/Ranks/Threads/GPUs</th>
-		<th style="width: 8%">Result</th>
+		<th style="width: 12%">Dataset</th>
+		<th style="width: 12%">Nodes / Ranks / Threads / GPUs</th>
+		<th style="width: 10%">Result</th>
 	  </tr>
 	</thead>
 
@@ -36,7 +36,7 @@
 		  <td><a href="http://stats.{{result.system}}.tacc.utexas.edu/machine/job/{{result.jobid}}/">{{result.jobid}}</a></td>
 		  <td> {{result.submit_time}} </td>
 		  <td>{{result.dataset}}</td>
-		  <td>{{result.nodes}}/{{result.ranks_per_node}}/{{result.threads}}</td>
+		  <td><pre>{{result.nodes|ljust:"4"}} / {{result.ranks|ljust:"4"}} / {{result.threads|ljust:"4"}} / {{result.gpus}}</pre></td>
 		  <td><a href='{{result.get_absolute_url}}'>{{result.result}} {{result.result_unit}}</td>
 		</tr>
 	  {% endfor %}

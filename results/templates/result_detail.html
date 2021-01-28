@@ -60,22 +60,10 @@
           <td>Threads</td>
           <td>{{ object.threads }}</td>
         </tr>
-        <tr>
-          <td>Code</td>
-          <td>{{ object.code }} {{ object.version }}</td>
-        </tr>
-        <tr>
-          <td>Compiler</td>
-          <td>{{ object.compiler }} - {{ object.mpi }}</td>
-        </tr>
-        <tr>
-          <td>Module list</td>
-          <td>{{ object.modules }}</td>
-        </tr>
-        <tr>
-          <td>Dataset</td>
-          <td>{{ object.dataset }}</td>
-        </tr>
+		<tr>
+		  <td>GPUs</td>
+		  <td>{{ object.gpus}}</td>
+		</tr>
         <tr>
           <td>Result</td>
           <td>{{ object.result }} {{ object.result_unit }}</td>
@@ -88,7 +76,7 @@
 		  <td>Application info</td>
 		  <td>
 		  {% if object.app_id %}
-		    <a href="/app?code=&version=&system=&jobid={{object.app_id}}">{{object.app_id}}</a>
+		    <a href="/app?code=&version=&system=&app_id={{object.app_id}}">{{object.app_id}}</a>
 		  {% endif %}
 		  </td>
     </tbody>

@@ -20,10 +20,12 @@ class AppFilter(filters.FilterSet):
 	version =	filters.CharFilter(lookup_expr='icontains',label='Version')
 	system = 	filters.CharFilter(lookup_expr='icontains',label='System')
 	jobid = 	filters.CharFilter(lookup_expr='icontains',label='JobID')
+	app_id =    filters.CharFilter(lookup_expr='icontains',label='Application')
+
 	#start_time = filters.DateFilter(field_name="submit_time", lookup_expr='gte', label='Search date')
 	#end_time = filters.DateFilter(field_name="submit_time", lookup_expr='lte', label='Search date')
 
 	class Meta:
 		model = Application
-		fields = ['code', 'version', 'system', 'jobid']
+		fields = ['code', 'version', 'system', 'jobid', 'app_id']
 

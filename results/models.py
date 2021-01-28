@@ -39,6 +39,7 @@ class Result(models.Model):
 	nodes 			= models.IntegerField(blank=False)
 	ranks 			= models.IntegerField(blank=False)
 	threads 		= models.IntegerField(blank=False, default=1)
+	gpus 			= models.IntegerField(blank=False, default=0)
 	dataset 		= models.CharField(max_length=50, blank=False)
 	result 			= models.DecimalField(decimal_places=3, max_digits=20, blank=False)
 	result_unit 	= models.CharField(max_length=50, blank=False)
