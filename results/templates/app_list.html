@@ -30,7 +30,7 @@
 		  <td><a href={{app.get_absolute_url}}>{{app.code}}</a></td>
 		  <td>{{app.version}}</td>
 		  <td>{{app.system}}</td>
-		  <td><a href="http://stats.{{app.system}}.tacc.utexas.edu/machine/job/{{app.jobid}}/">{{app.jobid}}</a></td>
+		  <td><a href="http://stats.{{app.system}}.tacc.utexas.edu/machine/job/{{app.task_id}}/">{{app.task_id}}</a></td>
 		</tr>
 	  {% endfor %}
 

@@ -12,7 +12,7 @@ class ResultForm(forms.ModelForm):
 			'end_time',
 			'capture_time',
 			'description',
-			'jobid',
+			'task_id',
 			'job_status',
 			'nodelist',
 			'nodes',
@@ -43,7 +43,7 @@ class AppForm(forms.ModelForm):
 			'exe_file',
 			'build_prefix',
 			'build_date',
-			'jobid',
+			'task_id',
 			'app_id'
 		]
 
