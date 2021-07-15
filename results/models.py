@@ -15,12 +15,16 @@ class Application(models.Model):
 	module_use   = models.CharField(max_length=100, blank=True, null=True)
 	modules		 = models.CharField(max_length=200, blank=False)
 	opt_flags	 = models.CharField(max_length=200, blank=True, null=True)
+	bin_dir      = models.CharField(max_length=50, blank=True, null=True)
 	exe_file	 = models.CharField(max_length=50, blank=False)
 	build_prefix = models.CharField(max_length=200, blank=False)
 	build_date	 = models.DateTimeField(blank=False)
-	exec_mode       = models.CharField(max_length=100, blank=False)
+	script       = models.CharField(max_length=50, blank=True, null=True)
+	exec_mode    = models.CharField(max_length=100, blank=False)
 	task_id		 = models.IntegerField(blank=False)
 	app_id       = models.CharField(max_length=50, blank=False, unique=True)
+	stdout       = models.CharField(max_length=50, blank=False)
+	stderr       = models.CharField(max_length=50, blank=False)
 
 	def get_absolute_url(self):
 		return f"/app/{self.id}/"

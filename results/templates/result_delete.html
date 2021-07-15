@@ -3,7 +3,7 @@
 {% block content %}
 
 <form action='./delete' method='POST'>{% csrf_token %}
-	<h3> Confirm delete of {{ object.dataset}} (Job ID {{ object.jobid}}) result?</h3>
+	<h3> Confirm delete of {{ object.dataset}} (Job ID {{ object.task_id}}) result?</h3>
 	<hr/>
 	<p><input class="btn btn-danger" type='submit' value='Yes' />  <a class="btn btn-success" href='.'>Cancel</a></p>
 </form>

@@ -25,7 +25,7 @@ SECRET_KEY = '9&*o+c-0$bpwer*2-9p#t^xw#xdc9!x@33e4p!11(bfdj1ri*k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tacc-stats03.tacc.utexas.edu']
 
 
 # Application definition
