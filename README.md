@@ -17,6 +17,7 @@ exit
 # Python Setup
 
 ```
+yum install -y postgresql-devel
 python3 --version
 python3 -m venv env
 source env/bin/activate
