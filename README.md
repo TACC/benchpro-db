@@ -17,9 +17,10 @@ exit
 # Python Setup
 
 ```
+yum install -y postgresql-devel
 python3 --version
 python3 -m venv env
 source env/bin/activate
-pip install django psycopg2
+pip install django psycopg2 django-filter django-mathfilters mod-wsgi
 python3 -m django --version
 ```
