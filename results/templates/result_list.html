@@ -10,38 +10,37 @@
   <hr/>
 
   <form method="GET">
-	{{ filter.form }}
-	<button type="submit" class="btn btn-primary">Search</button>
+    {{ filter.form }}
+    <button type="submit" class="btn btn-primary">Search</button>
   </form>
 
   <table class="table table-striped table-dark">
-	<thead>
-	  <tr>
-		<th style="width: 5%">User</th>
-		<th style="width: 5%">System</th>
-		<th style="width: 3%">Job ID</th>
-		<th style="width: 8%">Submit time</th>
-		<th style="width: 12%">Dataset</th>
-		<th style="width: 12%">Nodes / Ranks / Threads / GPUs</th>
-		<th style="width: 10%">Result</th>
-	  </tr>
-	</thead>
+    <thead>
+      <tr>
+        <th style="width: 3%">Owner</th>
+        <th style="width: 3%">System</th>
+        <th style="width: 3%">Task ID</th>
+        <th style="width: 10%">Submit time</th>
+        <th style="width: 12%">Dataset</th>
+        <th style="width: 12%">Nodes / Ranks / Threads / GPUs</th>
+        <th style="width: 10%">Result</th>
+      </tr>
+    </thead>
 
-	<tbody>
+    <tbody>
 
-	  {% for result in filter.qs %}
-		<tr>
-		  <td>{{result.username}}</td>
-		  <td>{{result.system}}</td>
-		  <td><a href="http://stats.{{result.system}}.tacc.utexas.edu/machine/job/{{result.jobid}}/">{{result.jobid}}</a></td>
-		  <td> {{result.submit_time}} </td>
-		  <td>{{result.dataset}}</td>
-		  <td><pre>{{result.nodes|ljust:"4"}} / {{result.ranks|ljust:"4"}} / {{result.threads|ljust:"4"}} / {{result.gpus}}</pre></td>
-		  <td><a href='{{result.get_absolute_url}}'>{{result.result}} {{result.result_unit}}</td>
-		</tr>
-	  {% endfor %}
-
-	</tbody>
+      {% for result in filter.qs %}
+      <tr>
+        <td>{{result.username}}</td>
+        <td>{{result.system}}</td>
+        <td><a href="https://stats.{{result.system}}.tacc.utexas.edu/machine/job/{{result.task_id}}/">{{result.task_id}}</a></td>
+        <td> {{result.submit_time}} </td>
+        <td>{{result.dataset}}</td>
+        <td><pre>{{result.nodes|ljust:"4"}} / {{result.ranks|ljust:"4"}} / {{result.threads|ljust:"4"}} / {{result.gpus}}</pre></td>
+        <td><a href='{{result.get_absolute_url}}'>{{result.result}} {{result.result_unit}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
   </table>
 
   <p>Found {{filter.qs|length}} results </p>

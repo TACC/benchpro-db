@@ -2,24 +2,29 @@
 {% load static %}
 <html lang="en">
 <head>
-  <title>Benchtool</title>
+  <title>BenchPRO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="{% url 'media' path='favicon.ico' %}"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
+
+  <style>
+    #benchpro {display:inline-block; margin-right:10px; width:800px;}
+    #tacc     {display:inline-block; width:600px;}
+  </style>
 </head>
 
 <body>
   <div class ="container-fluid">
     <nav class="navbar navbar-default" role="navigation">
-	<div class="navbar-header"><a href="/"> <img src="{% url 'media' path='benchtool.png' %}" style="width:100%;"/></a></div>
-	<div class="navbar-header"><a href="https://www.tacc.utexas.edu"> <img src="{% url 'media' path='TACC_logo.png' %}" style="max-width:50%;"/></a></div>
-     </nav>
+	<div id="benchpro"><a href="/"> <img src="{% url 'media' path='benchpro_white.png' %}" style="width:30%;"/></a></div>
+	<div id="tacc"><a href="https://www.tacc.utexas.edu"> <img src="{% url 'media' path='TACC_logo.png' %}" style="max-width:30%;"/></a></div>
+    </nav>
 
-	<br/>
+    <br/>
 
     {% block content %}
     {% endblock %}    
-
 
     </div> 
   </body>

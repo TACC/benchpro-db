@@ -20,8 +20,8 @@ def result_create_view(request):
 	}
 	return render(request, "result_create.html", context)
 
-def result_delete_view(request, id):
-	obj = get_object_or_404(Result, id=id)
+def result_delete_view(request, task_id):
+	obj = get_object_or_404(Result, task_id=task_id)
 	print(request.method)
 	if request.method == 'POST':
 		print("POST done")
@@ -45,8 +45,8 @@ class result_list_view(ListView):
 		context['count'] = self.get_queryset().count()
 		return context
 
-def result_detail_view(request, id):
-	obj = get_object_or_404(Result, id=id)
+def result_detail_view(request, task_id):
+	obj = get_object_or_404(Result, task_id=task_id)
 	context = {
 		'object': obj
 	}
@@ -71,8 +71,8 @@ def app_create_view(request):
     }
     return render(request, "app_create.html", context)
 
-def app_delete_view(request, id):
-    obj = get_object_or_404(Application, id=id)
+def app_delete_view(request, task_id):
+    obj = get_object_or_404(Application, task_id=task_id)
     print(request.method)
     if request.method == 'POST':
         print("POST done")
@@ -96,8 +96,8 @@ class app_list_view(ListView):
         context['count'] = self.get_queryset().count()
         return context
 
-def app_detail_view(request, id):
-    obj = get_object_or_404(Application, id=id)
+def app_detail_view(request, task_id):
+    obj = get_object_or_404(Application, task_id=task_id)
     context = {
         'object': obj
     }

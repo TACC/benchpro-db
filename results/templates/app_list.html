@@ -9,32 +9,36 @@
   <hr/>
 
   <form method="GET">
-	{{ filter.form }}
-	<button type="submit" class="btn btn-primary">Search</button>
+    {{ filter.form }}
+    <button type="submit" class="btn btn-primary">Search</button>
   </form>
 
   <table class="table table-striped table-dark">
-	<thead>
-	  <tr>
-		<th style="width: 15%">Code</th>
-		<th style="width: 15%">Version</th>
-		<th style="width: 15%">System</th>
-		<th style="width: 15%">Job ID</th>
-	  </tr>
-	</thead>
+    <thead>
+      <tr>
+        <th style="width: 15%">App ID</th>
+        <th style="width: 15%">Owner</th>    
+        <th style="width: 15%">System</th>
+        <th style="width: 15%">Code</th>
+        <th style="width: 15%">Version</th>
+        <th style="width: 15%">Task ID</th>
+      </tr>
+    </thead>
 
-	<tbody>
+    <tbody>
 
-	  {% for app in filter.qs %}
-		<tr>
-		  <td><a href={{app.get_absolute_url}}>{{app.code}}</a></td>
-		  <td>{{app.version}}</td>
-		  <td>{{app.system}}</td>
-		  <td><a href="http://stats.{{app.system}}.tacc.utexas.edu/machine/job/{{app.task_id}}/">{{app.task_id}}</a></td>
-		</tr>
-	  {% endfor %}
+      {% for app in filter.qs %}
+      <tr>
+        <td><a href={{app.get_absolute_url}}>{{app.app_id}}</a></td>
+        <td>{{app.username}}</td>
+        <td>{{app.system}}</td>
+        <td>{{app.code}}</td>
+        <td>{{app.version}}</td>
+        <td><a href="https://stats.{{app.system}}.tacc.utexas.edu/machine/job/{{app.task_id}}/">{{app.task_id}}</a></td>
+      </tr>
+      {% endfor %}
 
-	</tbody>
+    </tbody>
   </table>
 
   <p>Found {{filter.qs|length}} applications </p>

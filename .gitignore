@@ -11,10 +11,6 @@ benchdb/__pycache__/
 # Distribution / packaging
 hw_reporting/hw_report*
 .Python
-build/modulefiles/stampede2
-build/modulefiles/frontera
-build/stampede2
-build/frontera
 data_store/*
 develop-eggs/
 dist/
@@ -33,6 +29,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+data_store/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

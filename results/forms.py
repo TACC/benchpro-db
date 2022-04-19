@@ -42,7 +42,7 @@ class AppForm(forms.ModelForm):
 			'opt_flags',
 			'exe_file',
 			'build_prefix',
-			'build_date',
+			'submit_time',
 			'task_id',
 			'app_id'
 		]

@@ -7,12 +7,12 @@ urlpatterns = [
 
 	path('app', app_list_view.as_view(), name='apps'),
 
-	path('app/<int:id>/', app_detail_view),
-	path('app/<int:id>/delete', app_delete_view, name='app_delete'),
+	path('app/<int:task_id>/', app_detail_view),
+	path('app/<int:task_id>/delete', app_delete_view, name='app_delete'),
 	path('app/create/', app_create_view),
 
-    path('result/<int:id>/', result_detail_view),
-    path('result/<int:id>/delete', result_delete_view, name='result_delete'),
+    path('result/<int:task_id>/', result_detail_view),
+    path('result/<int:task_id>/delete', result_delete_view, name='result_delete'),
     path('result/create/', result_create_view),
     path('test/', test_view)
 ]

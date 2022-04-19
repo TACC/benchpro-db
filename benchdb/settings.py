@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9&*o+c-0$bpwer*2-9p#t^xw#xdc9!x@33e4p!11(bfdj1ri*k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['benchpro.tacc.utexas.edu', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'results',
-	'django_filters',
-	'mathfilters',
+    'django_filters',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
